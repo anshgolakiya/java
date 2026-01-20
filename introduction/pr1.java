@@ -1,55 +1,44 @@
-import java.util.* ;
-class time {
-    int hours ;
-    int minute ;
-    void settime(int h , int m){
-        hours = h ;
-        minute = m ;
-    }
-    void display(){
-        System.out.println(hours + "hours" + minute + " minute");
-    }
-    void addtime(time t1 , time t2) {
-        int total_minute = t1.minute + t2.minute ;
-        int total_hours = t1.hours + t2.hours ;
-      
-        if(minute >= 60)
-        {
-            total_hours += total_minute / 60 ;
-            total_minute = total_minute % 60 ;
-        }
+package pr1;
 
-        hours = total_hours ;
-        minute = total_minute ;
-    }
-}
-public class pr1 {
+import java.util.* ;
+public class Pr1 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        time t1 = new time() ;
-        time t2 = new time() ;
-        time t3 = new time() ;
-
-        System.out.println("Enter hours for time T1 : ");
-        int h1 = sc.nextInt();
-        System.out.println("Enter minute for time T1 : ");
-        int m1 = sc.nextInt();
-        t1.settime(h1, m1);
-        System.out.println("Enter hours for time T2 : ");
-        int h2 = sc.nextInt();
-        System.out.println("Enter minute for time T2 : ");
-        int m2 = sc.nextInt();
-        t2.settime(h2, m2);
-        
-        t3.addtime(t1,t2);
-
-        System.out.println("Time t1 : ");
-        t1.display();
-        System.out.println("Time t2 : ");
-        t2.display();
-        System.out.println("Time t3 : ");
-        t3.display();
-        
-        sc.close();
-    }
+        System.out.print("Enter an amount : ");
+        int amount = sc.nextInt();
+        int note100 = 0 , note50 = 0 , note10 = 0 , note5 = 0 , note1 = 0 ;
+        if(amount <= 0)
+        {
+            System.out.println("invalid amount, Try again !");
+        }
+        else
+        {
+            if(amount >= 100){
+            note100 = amount/100;
+            amount = amount%100;
+        }
+        if(amount >= 50){
+            note50 = amount/50;
+            amount = amount%50;
+        }
+        if(amount >= 10){
+            note10 = amount/10;
+            amount = amount%10;
+        }
+        if(amount >= 5){
+            note5 = amount/5;
+            amount = amount%5;
+        }
+        if(amount >= 1)
+        {
+            note1 = amount ;
+        }
+	Sysyem.out.println("minimum numbe rof notes : ");
+        System.out.println("note of 100rs is : " + note100);
+        System.out.println("note of 50rs is : " + note50);
+        System.out.println("note of 10rs is : " + note10);
+        System.out.println("note of 5rs is : " + note5);
+        System.out.println("note of 1rs is : " + note1);
+        }
+    } 
 }
