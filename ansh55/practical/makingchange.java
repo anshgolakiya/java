@@ -1,6 +1,4 @@
-
-import java.util.Scanner;
-
+import java.util.*;
 public class makingchange {
    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -39,7 +37,15 @@ public class makingchange {
             }
             System.out.println();
         }
+       
         System.out.println("Minimum coins required : " + c[n][N]);
+         for(int i = n ; i >= 1 ; i--){
+            if(c[i][N] != c[i-1][N]){
+                N = N - d[i] ;
+                System.out.print(d[i] + " ");
+                i++ ;
+            }
+        }
         sc.close();
    }
 }
