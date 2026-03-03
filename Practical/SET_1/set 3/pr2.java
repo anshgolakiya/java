@@ -5,18 +5,19 @@ public class pr2{
         int count = 0 ;
         if(password.length() < 8)
             return false;
+        int flag = 0 ;
         for(int i = 0 ; i < password.length(); i++){
             
             char ch = password.charAt(i);
             if((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z') || (ch >= '0' && ch <='9')){
-                return true ;
+                flag = 1 ;
             }
             if(ch >= '0' && ch <='9'){
                 count++;
             }
         }
-        if(count >= 2 ){
-            return false ;
+        if(count >= 2 && flag == 1){
+            return true ;
         }
         return false ;
     }
@@ -24,11 +25,11 @@ public class pr2{
         Scanner sc = new Scanner(System.in) ;
         System.out.println("Enter a password you want to create: ");
         String password = sc.next() ;
-        if(!ValidPassword(password)){
-            System.out.println("Invalid Password");
+        if(ValidPassword(password)){
+            System.out.println("Valid Password");
         }
         else{
-            System.out.println("Valid Password");
+            System.out.println("Invalid Password");
         }  
     }
 }
