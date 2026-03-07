@@ -2,10 +2,13 @@ import java.util.*;
 public class MCM {
     void print(int s[][] , int i , int j){
         if(i == j){
-            System.out.println("A");
+            System.out.print("A" + i);
         }
         else{
-            
+            System.out.print("(");
+            print(s, i, s[i][j]);
+            print(s, s[i][j] + 1, j);
+            System.out.print(")");
         }
 
     }
@@ -45,6 +48,7 @@ public class MCM {
                 }
             }
         }
+        System.out.println("m matrix:");
         for(int i = 1 ; i < n+1 ; i++){
             for(int j = 1 ; j < n+1 ; j++){
                 if(i < j )
@@ -52,6 +56,7 @@ public class MCM {
             }
             System.out.println();
         }
+        System.out.println("s matrix:");
         for(int i = 1 ; i < n+1 ; i++){
             for(int j = 1 ; j < n+1 ; j++){
                 if(i < j )
@@ -59,7 +64,10 @@ public class MCM {
             }
             System.out.println();
         }
-
+        MCM mcm = new MCM();
+        System.out.print("Optimal parenthesization is:");
+        mcm.print(s, 1, n);
+        System.out.println();
         System.out.println("Minimum number of multiplications is: " + m[1][n]);
         sc.close();
     }
