@@ -111,7 +111,7 @@ public class pr1 {
                     break ;
                 case 4 :
                     System.out.println("====== || Upcasting Example : || =====");
-                    Vehicle vobj = new Car("GJ05SU1234","BMW","pETROL",5,true);
+                    Vehicle vobj = new Car("GJ05SU1234","BMW","PETROL",5,true);
                     vobj.displayDetails();
                     System.out.println("====== || Downcasting Example : || =====");
                     if(vobj instanceof Car){
