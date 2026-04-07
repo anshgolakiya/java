@@ -1,3 +1,4 @@
+package SET_4 ;
 import java.util.*;
 class Vehicle {
     String vehicleNumber;
@@ -55,7 +56,8 @@ public class pr1 {
         System.out.println("press 1 if it is vehicle but not car.");
         System.out.println("Press 2 if vehicle is Car");
         System.out.println("Press 3 if vehicle is Electric Car.");
-        System.out.println("Press 4 for Exit the program.");
+        System.out.println("Press 4 for show Example of up and down Casting.");
+        System.out.println("Press 5 for Exit the program.");
         
         int choice ;
         do{
@@ -108,11 +110,24 @@ public class pr1 {
                     E1.displayDetails();
                     break ;
                 case 4 :
-                    System.out.println("Exiting....");
+                    System.out.println("====== || Upcasting Example : || =====");
+                    Vehicle vobj = new Car("GJ05SU1234","BMW","pETROL",5,true);
+                    vobj.displayDetails();
+                    System.out.println("====== || Downcasting Example : || =====");
+                    if(vobj instanceof Car){
+                        Car cobj = (Car)vobj ;
+                        System.out.println("Numbe rof Seats : " + cobj.numberOfSeats);
+                        System.out.println("AC available : " + (cobj.ACavailable ? "Yes" : "NO"));
+                    }
+                    break ;
+                case 5 :
+                    System.out.println("Exiting......");
+                    break;
                 default :
                     System.out.println("Enter valid choice ! try again");
                     break ;
             }
-        }while(choice != 4);    
+        }while(choice != 5);    
+        sc.close();
     }
 }
