@@ -1,9 +1,9 @@
 package SET_4 ;
 import java.util.*;
 class Vehicle {
-    String vehicleNumber;
-    String Brand;
-    String fuelType;
+    protected String vehicleNumber;
+    protected String Brand;
+    protected String fuelType;
     Vehicle(String Vnumber, String Vbrand, String Ftype) {
         vehicleNumber = Vnumber;
         Brand = Vbrand;
@@ -16,8 +16,8 @@ class Vehicle {
     }
 }
 class Car extends Vehicle {
-    int numberOfSeats;
-    boolean ACavailable;
+    protected int numberOfSeats;
+    protected boolean ACavailable;
     public Car(String Vnumber, String Vbrand, String Ftype, int numberOfSeats, boolean ACavailable) {
         super(Vnumber, Vbrand, Ftype);
         this.numberOfSeats = numberOfSeats;
@@ -32,8 +32,8 @@ class Car extends Vehicle {
     }
 }
 class ElectricCar extends Car{
-    double batteryCapacity ;
-    double chargingTime ;
+    protected double batteryCapacity ;
+    protected double chargingTime ;
     public ElectricCar(String Vnumber, String Vbrand, String Ftype, int numberOfSeats, boolean ACavailable, double batterycapacity , double chargingtime) {
         super(Vnumber, Vbrand, Ftype, numberOfSeats, ACavailable);
         this.batteryCapacity = batterycapacity ;
@@ -116,7 +116,7 @@ public class pr1 {
                     System.out.println("====== || Downcasting Example : || =====");
                     if(vobj instanceof Car){
                         Car cobj = (Car)vobj ;
-                        System.out.println("Numbe rof Seats : " + cobj.numberOfSeats);
+                        System.out.println("Number of Seats : " + cobj.numberOfSeats);
                         System.out.println("AC available : " + (cobj.ACavailable ? "Yes" : "NO"));
                     }
                     break ;
