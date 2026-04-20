@@ -24,6 +24,8 @@ class FinalOrder extends PartialOrder{
     public void cancelOrder(int orderId){
         if(this.orderId == orderId){
             System.out.println("Order ID " + orderId + " has been cancelled.");
+            this.itemName;
+            this.quantity;
         }
         else{
             System.out.println("Invalid Order ID. Cancellation failed.");
