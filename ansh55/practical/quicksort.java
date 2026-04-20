@@ -8,17 +8,16 @@ public class mergesort {
         for(int i = 0 ; i < num ; i++){
             arr[i] = (int)(Math.random()*100) ;
         }
-        System.out.println("Given array:");
-        printArray(arr);
+        // System.out.println("Given array:");
+        // printArray(arr);
         long T1 = System.nanoTime();
         mergeSort(arr, 0, arr.length - 1);
         long T2 = System.nanoTime();
-        System.out.println("\nSorted array:");
-        printArray(arr);
+        // System.out.println("\nSorted array:");
+        // printArray(arr);
         System.err.println("\nTime taken by merge sort : " + (T2 -T1) + " nanoseconds");
         sc.close();
     }
-
     public static void mergeSort(int[] arr, int left, int right) {
         if (left < right) {
             int mid = left + (right - left) / 2;
@@ -27,14 +26,11 @@ public class mergesort {
             merge(arr, left, mid, right);
         }
     }
-
     public static void merge(int[] arr, int left, int mid, int right) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
-
         int[] L = new int[n1];
         int[] R = new int[n2];
-
         for (int i = 0; i < n1; i++)
             L[i] = arr[left + i];
         for (int j = 0; j < n2; j++)
@@ -42,7 +38,6 @@ public class mergesort {
 
         int i = 0, j = 0;
         int k = left;
-
         while (i < n1 && j < n2) {
             if (L[i] <= R[j]) {
                 arr[k] = L[i];
@@ -53,23 +48,22 @@ public class mergesort {
             }
             k++;
         }
-
         while (i < n1) {
             arr[k] = L[i];
             i++;
             k++;
         }
-
         while (j < n2) {
             arr[k] = R[j];
             j++;
             k++;
         }
+        // printArray(arr);
     }
-
     public static void printArray(int[] arr) {
         for (int i : arr) {
             System.out.print(i + " ");
         }
+        System.out.println();
     }
 }
